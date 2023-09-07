@@ -41,13 +41,12 @@
             let countdownElement = document.getElementById('countdown');
             let count = 3;
             let countdownInterval = setInterval(function() {
-                count--;
-                if (count <= 0) {
+                if (count <= 1) {
                     clearInterval(countdownInterval);
-                    // Redirect logic goes here
-                    // You can use window.location.href = 'https://8764pl-8080.csb.app/'; to redirect
+                    window.location.href = 'https://8764pl-8080.csb.app/';
                 } else {
                     countdownElement.innerText = count;
+                    count--;
                 }
             }, 1000);
         });
