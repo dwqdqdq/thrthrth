@@ -3,34 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hidden iFrame</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            padding: 20px;
-        }
-
-        iframe {
-            display: block;
-            margin: 0 auto;
-            border: 0;
-            width: 100%;
-            max-width: 800px;
-            height: 400px;
-        }
-    </style>
+    <title>Embedded Website</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Embedded Website</h1>
-    <iframe id="hiddenFrame"></iframe>
+    <iframe id="hiddenFrame" onload="resizeIframe()"></iframe>
     <script src="script.js"></script>
 </body>
 </html>
