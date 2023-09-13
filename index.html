@@ -3,53 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting App</title>
+    <title>Hidden iFrame</title>
     <style>
         body {
-            background-color: black;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
         }
 
-        .container {
+        h1 {
             text-align: center;
+            color: #333;
+            padding: 20px;
         }
 
-        .message {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .countdown {
-            font-size: 48px;
+        iframe {
+            display: block;
+            margin: 0 auto;
+            border: 0;
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="message">
-            Redirecting you to our hidden service.
-        </div>
-        <div id="countdown" class="countdown">3</div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            let countdownElement = document.getElementById('countdown');
-            let count = 3;
-            let countdownInterval = setInterval(function() {
-                if (count <= 1) {
-                    clearInterval(countdownInterval);
-                    window.location.href = 'https://greatsword-dfd7b04f8717.herokuapp.com';
-                } else {
-                    countdownElement.innerText = count;
-                    count--;
-                }
-            }, 1000);
-        });
-    </script>
+    <h1>Embedded Website</h1>
+    <iframe id="hiddenFrame"></iframe>
+    <script src="script.js"></script>
 </body>
 </html>
