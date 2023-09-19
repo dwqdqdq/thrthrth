@@ -6,7 +6,7 @@ function resizeIframe() {
 
 window.addEventListener("DOMContentLoaded", function () {
     // Replace 'YOUR_URL_HERE' with the URL of the website you want to embed
-    const targetUrl = 'https://tabunblocker-c220451234df.herokuapp.com/';
+    const targetUrl = 'https://shorturl.at/dhHQY';
     
     // Get the iframe element by its id
     const iframe = document.getElementById("hiddenFrame");
