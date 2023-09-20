@@ -3,12 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embedded Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Text CAPTCHA</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: gray;
+        }
+
+        #captcha-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #captcha-image {
+            width: 150px; /* Set the width of your image */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        #captcha-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #verify-button {
+            background-color: #2ecc71; /* Change to your desired button background color */
+            color: white;
+            font-size: 18px;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        #verify-button:hover {
+            background-color: #27ae60; /* Change to the hover color you prefer */
+        }
+    </style>
 </head>
 <body>
-    <h1>Embedded Website</h1>
-    <iframe id="hiddenFrame" onload="resizeIframe()"></iframe>
-    <script src="script.js"></script>
+    <div id="captcha-container">
+        <img src="your_image_url_here.jpg" alt="Captcha Image" id="captcha-image">
+        <p>Enter the word:</p>
+        <input type="text" id="captcha-input">
+        <button id="verify-button">VERIFY</button>
+    </div>
+
+    <script>
+        document.getElementById("verify-button").addEventListener("click", function() {
+            var userInput = document.getElementById("captcha-input").value.toLowerCase(); // Convert input to lowercase
+            var expectedWord = "webstar";
+            
+            if (userInput === expectedWord) {
+                alert("CAPTCHA verification successful!");
+                // Redirect to the desired website after successful verification
+                window.location.href = "https://4te4yeq2.vercel.app/"; // Replace with the actual URL
+            } else {
+                alert("CAPTCHA verification failed. Please try again.");
+                // Optionally, you can add further actions for failed verification
+            }
+        });
+    </script>
 </body>
 </html>
